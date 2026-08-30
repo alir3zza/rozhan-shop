@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تماس با ما | مزمن روزان</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: #f5f0eb;
+            color: #2c2c2c;
+        }
+
+        /* ===== هدر ===== */
+        .header {
+            background: #1e1a1a;  /* مشکی مایل به قهوه‌ای */
+            padding: 18px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            border-bottom: 2px solid #9e1a1a; /* زرشکی */
+        }
+
+        .logo {
+            color: #e4d5c0;
+            font-size: 26px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        .logo span {
+            color: #b32a2a; /* زرشکی روشن‌تر */
+        }
+
+        .nav {
+            display: flex;
+            gap: 28px;
+            flex-wrap: wrap;
+        }
+        .nav a {
+            color: #d6cdc0;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            transition: 0.2s;
+            border-bottom: 2px solid transparent;
+            padding-bottom: 4px;
+        }
+        .nav a:hover,
+        .nav a.active {
+            color: #eaceb0;
+            border-bottom-color: #b32a2a;
+        }
+
+        .nav .login {
+            background: #9e1a1a; /* زرشکی */
+            color: #f5f0eb;
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-weight: 600;
+            border-bottom: none;
+        }
+        .nav .login:hover {
+            background: #b32a2a;
+            color: #fff;
+            border-bottom: none;
+        }
+
+        /* ===== بنر کوچک ===== */
+        .hero-mini {
+            background: linear-gradient(145deg, #2b1f1f, #1e1a1a);
+            padding: 30px 40px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #9e1a1a70;
+        }
+        .hero-mini h2 {
+            color: #f2e3d2;
+            font-size: 28px;
+            font-weight: 300;
+        }
+        .hero-mini h2 strong {
+            color: #c94f4f; /* زرشکی ملایم */
+            font-weight: 600;
+        }
+        .hero-mini .badge {
+            background: #9e1a1a;
+            color: #f5f0eb;
+            padding: 8px 24px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 15px;
+            letter-spacing: 0.5px;
+        }
+
+        /* ===== بخش تماس ===== */
+        .contact-section {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 30px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+            justify-content: center;
+        }
+
+        /* ===== فرم ===== */
+        .contact-form {
+            flex: 1 1 400px;
+            background: #ffffffd9;
+            backdrop-filter: blur(2px);
+            padding: 40px 35px;
+            border-radius: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+            border: 1px solid #e1d3c4;
+        }
+
+        .contact-form h3 {
+            font-size: 26px;
+            color: #1e1a1a;
+            margin-bottom: 25px;
+            border-right: 5px solid #9e1a1a;
+            padding-right: 18px;
+        }
+
+        .form-group {
+            margin-bottom: 22px;
+        }
+        .form-group label {
+            display: block;
+font-weight: 600;
+            color: #33302b;
+            margin-bottom: 7px;
+            font-size: 15px;
+        }
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 14px 18px;
+            border: 1px solid #d6cbbc;
+            border-radius: 40px;
+            background: #fcf9f5;
+            font-size: 15px;
+            transition: 0.2s;
+            outline: none;
+            color: #1e1a1a;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: #9e1a1a;
+            box-shadow: 0 0 0 4px #9e1a1a30;
+            background: #fff;
+        }
+        .form-group textarea {
+            border-radius: 24px;
+            min-height: 120px;
+            resize: vertical;
+        }
+        .form-group select {
+            appearance: none;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%239e1a1a" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>');
+            background-repeat: no-repeat;
+            background-position: left 18px center;
+            padding-left: 45px;
+        }
+
+        .btn-submit {
+            background: #9e1a1a; /* زرشکی */
+            color: #f5f0eb;
+            border: none;
+            padding: 16px 40px;
+            border-radius: 60px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+            width: 100%;
+            letter-spacing: 1px;
+            border: 1px solid #b32a2a;
+        }
+        .btn-submit:hover {
+            background: #b32a2a;
+            color: #fff;
+            border-color: #9e1a1a;
+            transform: scale(1.01);
+        }
+
+        /* ===== بخش اطلاعات تماس (پایین) ===== */
+        .contact-info-wrapper {
+            max-width: 1200px;
+            margin: 20px auto 50px;
+            padding: 0 30px;
+        }
+
+        .contact-info {
+            background: #ffffffd9;
+            backdrop-filter: blur(2px);
+            padding: 35px 40px;
+            border-radius: 30px;
+            border: 1px solid #e1d3c4;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.04);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+        }
+
+        .info-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px 40px;
+            flex: 2 1 400px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-size: 16px;
+            color: #1e1a1a;
+        }
+        .info-item i {
+            width: 44px;
+            height: 44px;
+            background: #ede6dd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            color: #9e1a1a;
+            font-size: 20px;
+        }
+        .info-item a {
+            color: #1e1a1a;
+            text-decoration: none;
+            border-bottom: 1px dashed #b38b7a;
+        }
+        .info-item a:hover {
+            color: #9e1a1a;
+            border-bottom: 1px solid #9e1a1a;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 14px;
+            flex: 0 1 auto;
+        }
+        .social-links a {
+            background: #e8ded2;
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #2c3a41;
+            font-size: 21px;
+            transition: 0.2s;
+            text-decoration: none;
+        }
+        .social-links a:hover {
+            background: #9e1a1a;
+            color: #fff;
+            transform: translateY(-4px);
+        }
+/* ===== فوتر ===== */
+        .footer {
+            background: #1e1a1a;
+            padding: 20px 40px;
+            text-align: center;
+            color: #a39686;
+            border-top: 2px solid #9e1a1a50;
+            margin-top: 30px;
+            font-size: 15px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .footer span {
+            color: #c94f4f;
+        }
+
+        /* ===== ریسپانسیو ===== */
+        @media (max-width: 700px) {
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+                padding: 18px 20px;
+            }
+            .nav {
+                gap: 16px;
+            }
+            .hero-mini {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+                padding: 20px;
+            }
+            .contact-form {
+                padding: 28px 20px;
+            }
+            .contact-info {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 25px 20px;
+            }
+            .info-items {
+                flex-direction: column;
+                gap: 16px;
+            }
+            .footer {
+                flex-direction: column;
+                gap: 8px;
+                padding: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ===== هدر ===== -->
+<header class="header">
+    <div class="logo">مزمن <span>روزان</span></div>
+    <nav class="nav">
+        <a href="#">خانە</a>
+        <a href="#">پلەک</a>
+        <a href="#" class="login">ورود / ثبت نام</a>
+        <a href="#">استایل خودتو بساز</a>
+        <a href="#">نظرسنجی</a>
+        <a href="#" class="active">درباره ما</a>
+        <a href="#">گشتوو...</a>
+    </nav>
+</header>
+
+<!-- ===== بنر داخلی ===== -->
+<div class="hero-mini">
+    <h2><strong>مزمن روزان</strong> – شیک پوشی با بهترین‌ها</h2>
+    <div class="badge">
+        <i class="fas fa-phone-alt" style="margin-left: 10px;"></i> تماس با ما
+    </div>
+</div>
+
+<!-- ===== فرم تماس (بالا) ===== -->
+<section class="contact-section">
+    <div class="contact-form">
+        <h3>پیام خود را بنویسید</h3>
+        <form action="#" method="POST">
+            <div class="form-group">
+                <label><i class="far fa-user" style="margin-left: 8px;"></i> نام و نام خانوادگی</label>
+                <input type="text" placeholder="مثال: سارا محمدی" required>
+            </div>
+            <div class="form-group">
+                <label><i class="far fa-envelope" style="margin-left: 8px;"></i> ایمیل</label>
+                <input type="email" placeholder="your@email.com" required>
+            </div>
+            <div class="form-group">
+                <label><i class="fas fa-phone" style="margin-left: 8px;"></i> شماره تماس</label>
+                <input type="tel" placeholder="۰۹۱۲XXX">
+            </div>
+            <div class="form-group">
+                <label><i class="fas fa-tag" style="margin-left: 8px;"></i> موضوع</label>
+                <select>
+                    <option>انتخاب کنید...</option>
+                    <option>سفارش و خرید</option>
+                    <option>مشاوره استایل</option>
+                    <option>پشتیبانی</option>
+                    <option>پیشنهاد همکاری</option>
+                    <option>سایر</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label><i class="far fa-comment" style="margin-left: 8px;"></i> پیام شما</label>
+                <textarea placeholder="متن پیام ..."></textarea>
+            </div>
+            <button type="submit" class="btn-submit">
+                <i class="fas fa-paper-plane" style="margin-left: 10px;"></i> ارسال پیام
+            </button>
+        </form>
+    </div>
+</section>
+<!-- ===== اطلاعات تماس (پایین) ===== -->
+<div class="contact-info-wrapper">
+    <div class="contact-info">
+        <div class="info-items">
+            <div class="info-item">
+                <i class="fas fa-map-pin"></i>
+                <span>تهران، خیابان ولیعصر، پلاک ۱۷۸</span>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-phone-alt"></i>
+                <a href="tel:+982188776655">۰۲۱‑۸۸۷۷‑۶۶۵۵</a>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:info@mozemanrozan.ir">info@mozemanrozan.ir</a>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-clock"></i>
+                <span>شنبه تا پنجشنبه ۱۰‑۲۰</span>
+            </div>
+        </div>
+
+        <div class="social-links">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-telegram"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+    </div>
+</div>
+
+<!-- ===== فوتر ===== -->
+<footer class="footer">
+    <div>© ۲۰۲۶ مزمن روزان – تمامی حقوق محفوظ است</div>
+    <div>
+        <span>کالکشن زمستانه</span>  •  <span>لیاس مجلس</span>
+    </div>
+</footer>
+
+<!-- (اختیاری) آیکون‌های فرضی برای نمایش فایل محلی -->
+<div style="display: none;">file:///D:/site/index.html.html#</div>
+
+</body>
+</html>

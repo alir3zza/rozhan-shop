@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پنل کاربری | مزون روژان</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body{
+            background:#f8f9fa;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+            font-family:tahoma;
+        }
+
+        .panel-box{
+            width:420px;
+            background:#fff;
+            border-radius:20px;
+            box-shadow:0 10px 30px rgba(0,0,0,.15);
+            padding:40px;
+            text-align:center;
+        }
+
+        h2{
+            color:#c2185b;
+            margin-bottom:30px;
+        }
+
+        .btn-custom{
+            width:100%;
+            padding:12px;
+            margin-top:15px;
+            font-size:18px;
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="panel-box">
+
+    <h2>مزون روژان</h2>
+
+    <p class="text-muted">
+        برای ادامه یکی از گزینه‌های زیر را انتخاب کنید.
+    </p>
+
+    <a href="{% url 'login' %}" class="btn btn-danger btn-custom">
+        ورود
+    </a>
+
+    <a href="{% url 'signup' %}" class="btn btn-outline-danger btn-custom">
+        ثبت نام
+    </a>
+
+</div>
+
+</body>
+</html>
