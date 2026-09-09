@@ -66,7 +66,7 @@ Rozhan/
 
 **Alireza Rahimi**
 
-Electrical Engineering Student
+telecommunication Engineering Student |
 Backend Developer | Python & Django
 
 ## 📌 Project Status
